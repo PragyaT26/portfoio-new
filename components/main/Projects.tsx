@@ -57,14 +57,14 @@ const Projects = () => {
       </h1>
 
       <div className="h-full w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 px-10">
-        {projectList.map(({ src, title, link, description }) => (
-          <a key={title} href={link} target="_blank" rel="noopener noreferrer" className="max-w-sm">
-            <ProjectCard
-              src={`/${src}`}
-              title={title}
-              description={description}
-            />
-          </a>
+      {projectList.map((project) => (
+          <ProjectCard
+            key={project.title}
+            src={`/${project.src}`}
+            title={project.title}
+            description={project.description}
+            link={project.link} // Pass link as a prop if the ProjectCard handles it internally
+          />
         ))}
       </div>
     </div>
